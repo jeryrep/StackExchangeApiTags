@@ -1,0 +1,24 @@
+﻿@model TagsViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tags</h1>
+    <table class="table">
+        <caption>Most popular tags on StackOverflow</caption>
+        <tr>
+            <th>Name</th>
+            <th>Count</th>
+            <th>SharePercentage</th>
+        </tr>
+        @foreach (var statisticTag in Model.StatisticTags)
+        {
+            <tr>
+                <td>@statisticTag.Tag.Name</td>
+                <td>@statisticTag.Tag.Count</td>
+                <td>@statisticTag.SharePercentage</td>
+            </tr>
+        }
+    </table>
+</div>
